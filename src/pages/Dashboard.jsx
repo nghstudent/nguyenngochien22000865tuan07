@@ -1,5 +1,5 @@
 import Overview from '../components/Overview';
-import DataTable from '../components/LoadDataTable';
+import DataTable from '../components/DataTable';
 import Header from "../components/Header";
 
 const Dashboard = () => {
