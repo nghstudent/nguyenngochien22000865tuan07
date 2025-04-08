@@ -55,6 +55,14 @@
       "value": 5000,
       "date": "2023-06-10",
       "status": "Completed"
+    },
+    {
+      "id": "26dd",
+      "customerName": "Nguyễn Phúc H",
+      "company": "Viettel",
+      "value": 10000,
+      "date": "2025-04-08",
+      "status": "In-progress"
     }
   ]
 }
