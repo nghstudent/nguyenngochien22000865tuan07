@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 const Dashboard = () => {
   return (
-    <div className="space-y-4 bg-gray-50 min-h-screen">
+    <div className="space-y-4 bg-white-50 min-h-screen">
       <Header />
       <div className="grid gap-4">
         <Overview />
