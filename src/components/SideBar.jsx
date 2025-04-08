@@ -50,7 +50,7 @@ const Sidebar = () => {
         <div className="bg-blue-50 p-4 rounded-lg text-center">
           <img src={Group} alt="Ad" className="mx-auto w-24 mb-3" />
           <h3 className="text-sm font-semibold">V2.0 IS AVAILABLE</h3>
-          <button className="mt-2 text-sm px-3 py-1 border rounded hover:bg-gray-100">
+          <button className="mt-2 text-sm px-3 py-1 border rounded hover:bg-gray-100" onClick={() => alert("Chức năng sẽ sớm ra mắt!")}>
             Try now
           </button>
         </div>

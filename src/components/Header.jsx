@@ -21,9 +21,9 @@ const Header = () => {
           </div>
 
           {/* Các icon khác */}
-          <FaBell className="text-gray-600 cursor-pointer" />
-          <FaQuestion className="text-gray-600 cursor-pointer" />
-          <img src={Avatar} alt="User avatar" className="w-8 h-8 rounded-full object-cover" />
+          <FaBell className="text-gray-600 cursor-pointer" onClick={() => alert("Chức năng sẽ sớm ra mắt!")} />
+          <FaQuestion className="text-gray-600 cursor-pointer" onClick={() => alert("Chức năng sẽ sớm ra mắt!")} />
+          <img src={Avatar} alt="User avatar" className="w-8 h-8 rounded-full object-cover" onClick={() => alert("Chức năng sẽ sớm ra mắt!")} />
         </div>
       </header>
     </div>
