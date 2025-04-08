@@ -28,14 +28,6 @@ const Sidebar = () => {
           <NavLink
             key={label}
             to={path}
-            // className={({ isActive }) =>
-            //   clsx(
-            //     "flex items-center px-4 py-2 rounded-md transition",
-            //     isActive
-            //       ? "bg-rose-600 text-white font-semibold"
-            //       : "text-gray-700 hover:bg-gray-100"
-            //   )
-            // }
             className={({ isActive }) =>
               clsx(
                 'flex items-center rounded transition-all duration-200',

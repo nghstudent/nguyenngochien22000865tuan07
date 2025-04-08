@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { FaTh } from "react-icons/fa";
 import { IoCartOutline, IoLogoUsd } from "react-icons/io5";
 import { RxAvatar } from "react-icons/rx";
-import overviewData from "../assets/data/data";
 
 const StatCard = ({ label, value, icon, percent, color }) => (
   <div className={`p-5 rounded-xl shadow-md ${color.bg}`}>
@@ -23,9 +22,10 @@ const Overview = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      setData(overviewData[0]);
-    }, 500);
+    fetch("/data/dataThongKe.json")
+      .then((res) => res.json())
+      .then((json) => setData(json[0]))
+      .catch((err) => console.error("Lỗi khi load dữ liệu:", err));
   }, []);
 
   if (!data) return <p className="text-center">Đang tải...</p>;

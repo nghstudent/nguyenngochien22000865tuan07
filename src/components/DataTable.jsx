@@ -29,7 +29,7 @@ const DataTable = () => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    fetch("data/data.json")
+    fetch("data/dataKhachHang.json")
       .then((res) => res.json())
       .then((data) => setOrders(data))
       .catch((error) => console.error("Lỗi khi load dữ liệu:", error));
