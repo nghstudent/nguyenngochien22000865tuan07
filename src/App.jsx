@@ -14,14 +14,13 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       
-      {/* Hàng 1: Sidebar + Nội dung */}
+      {/*Sidebar + Main */}
       <div className="flex flex-1">
         {/* Sidebar */}
         <div className="w-1/4 border-r">
           <SideBar />
         </div>
-
-        {/* Nội dung */}
+        {/* Main */}
         <div className="w-3/4 overflow-y-auto">
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
@@ -34,8 +33,7 @@ function App() {
           </Routes>
         </div>
       </div>
-
-      {/* Hàng 2: Footer */}
+      {/*Footer */}
       <Footer />
     </div>
   );
