@@ -32,7 +32,8 @@ const DataTable = () => {
   const [editingCustomer, setEditingCustomer] = useState(null);
 
   useEffect(() => {
-    fetch("data/dataKhachHang.json")
+    // fetch("data/dataKhachHang.json")
+    fetch("http://localhost:3000/customers")
       .then((res) => res.json())
       .then((data) => setOrders(data))
       .catch((error) => console.error("Lỗi khi load dữ liệu:", error));
@@ -69,13 +70,40 @@ const DataTable = () => {
     setIsEditOpen(false);
   };
 
-  const handleSaveEdit = (updatedCustomer) => {
-    setOrders((prevOrders) =>
-      prevOrders.map((order) =>
-        order.id === updatedCustomer.id ? updatedCustomer : order
-      )
-    );
-    closeEditModal();
+  // const handleSaveEdit = (updatedCustomer) => {
+  //   setOrders((prevOrders) =>
+  //     prevOrders.map((order) =>
+  //       order.id === updatedCustomer.id ? updatedCustomer : order
+  //     )
+  //   );
+  //   closeEditModal();
+  // };
+
+  const handleSaveEdit = async (updatedCustomer) => {
+    try {
+      const res = await fetch(`http://localhost:3000/customers/${updatedCustomer.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedCustomer),
+      });
+
+      if (!res.ok) {
+        throw new Error("Cập nhật thất bại");
+      }
+
+      const updated = await res.json();
+
+      // Cập nhật lại danh sách trong state
+      setOrders((prevOrders) =>
+        prevOrders.map((order) =>
+          order.id === updated.id ? updated : order
+        )
+      );
+      closeEditModal();
+    } catch (error) {
+      console.error("Lỗi khi cập nhật khách hàng:", error);
+      alert("Cập nhật thất bại");
+    }
   };
 
   const formatCurrency = (usd) =>

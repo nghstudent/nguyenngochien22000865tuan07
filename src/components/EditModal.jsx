@@ -21,15 +21,18 @@ const EditModal = ({ customer, onClose, onSave }) => {
     };
 
     const handleSave = () => {
-        console.log("Dữ liệu đã lưu:", formData);
-        onSave(formData);
+        const updatedData = {
+            ...formData,
+            value: Number(formData.value),
+        };
+        onSave(updatedData);
         onClose();
     };
 
     if (!customer) return null;
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 backdrop-blur-sm bg-white/10 flex items-center justify-center z-50">
             <div className="bg-white p-6 rounded-lg w-full max-w-md">
                 <h2 className="text-xl font-bold mb-4">Chỉnh sửa thông tin</h2>
 
