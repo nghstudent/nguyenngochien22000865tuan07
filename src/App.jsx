@@ -19,13 +19,13 @@ function App() {
       {/* Main content */}
       <div className="flex-1">
         <Routes>
+        <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/messages" element={<Messages />} />
           <Route path="/integrations" element={<Integrations />} />
-          <Route path="/" element={<Dashboard />} />
         </Routes>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X } from 'lucide-react';
 
 const AddModal = ({ onClose, onSave }) => {
+    // State để lưu trữ dữ liệu của form
     const [formData, setFormData] = useState({
         customerName: '',
         company: '',
@@ -10,6 +11,7 @@ const AddModal = ({ onClose, onSave }) => {
         status: 'New',
     });
 
+    // Hàm xử lý khi người dùng thay đổi giá trị trong input/select
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
@@ -18,6 +20,7 @@ const AddModal = ({ onClose, onSave }) => {
         }));
     };
 
+    //Hàm xử lý khi người dùng click nút "Lưu"
     const handleSave = () => {
         if (!formData.customerName || !formData.company || !formData.value || !formData.date) {
             alert('Vui lòng nhập đầy đủ thông tin!');

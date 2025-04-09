@@ -5,7 +5,7 @@ const Teams = () => {
     <div className="space-y-4">
       <Header />
       <div>
-        <h2>Teams</h2>
+        <h2>Teams Page</h2>
       </div>
     </div>
   );

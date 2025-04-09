@@ -35,6 +35,7 @@ const DataTable = () => {
 
   useEffect(() => {
     fetch("http://localhost:3000/customers")
+    // fetch("data/dataKhachHang.json")
       .then((res) => res.json())
       .then((data) => setOrders(data))
       .catch((error) => console.error("Lỗi khi load dữ liệu:", error));

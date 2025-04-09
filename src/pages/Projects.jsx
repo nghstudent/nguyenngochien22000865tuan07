@@ -6,7 +6,7 @@ const Project = () => {
         <div className="space-y-4">
             <Header />
             <div>
-                <h2>Projects</h2>
+                <h2>Projects Page</h2>
             </div>
         </div>
     );

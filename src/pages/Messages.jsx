@@ -6,7 +6,7 @@ const Messages = () => {
         <div className="space-y-4">
             <Header />
             <div>
-                <h2>Messages</h2>
+                <h2>Messages Page</h2>
             </div>
         </div>
     );

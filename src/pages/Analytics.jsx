@@ -6,7 +6,7 @@ const Analytics = () => {
         <div className="space-y-4">
             <Header />
             <div>
-                <h2>Analytics</h2>
+                <h2>Analytics Page</h2>
             </div>
         </div>
     );
