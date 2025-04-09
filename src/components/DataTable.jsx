@@ -131,7 +131,19 @@ const DataTable = () => {
 
   // Format giá trị đơn hàng sang định dạng USD
   const formatCurrency = (usd) =>
-    Number(usd).toLocaleString("en-US", { style: "currency", currency: "USD" });
+    Number(usd).toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+
+  // Format ngày tháng từ định dạng ISO sang dd/mm/yyyy
+  const formatDate = (isoDate) => {
+    const date = new Date(isoDate);
+    return date.toLocaleDateString("en-GB");
+  };
+
 
   return (
     <div className="px-4 py-8">
@@ -170,11 +182,11 @@ const DataTable = () => {
                 }
               />
             </th>
-            <th className="p-3">Customer Name</th>
-            <th className="p-3">Company</th>
-            <th className="p-3">Order Value</th>
-            <th className="p-3">Order Date</th>
-            <th className="p-3">Status</th>
+            <th className="p-3">CUSTOMER NAME</th>
+            <th className="p-3">COMPANY</th>
+            <th className="p-3">ORDER VALUE</th>
+            <th className="p-3">ORDER DATE</th>
+            <th className="p-3 text-center">STATUS</th>
             <th className="p-3 text-center"></th>
           </tr>
         </thead>
@@ -200,9 +212,9 @@ const DataTable = () => {
                 <span>{order.customerName}</span>
               </td>
 
-              <td className="p-3 text-sm">{order.company}</td>
-              <td className="p-3 text-sm">{formatCurrency(order.value)}</td>
-              <td className="p-3 text-sm">{order.date}</td>
+              <td className="p-3 text-sm text-left">{order.company}</td>
+              <td className="p-3 text-sm text-left">{formatCurrency(order.value)}</td>
+              <td className="p-3 text-sm text-left">{formatDate(order.date)}</td>
               <td className="p-3">
                 {/* Hiển thị trạng thái với màu sắc tương ứng */}
                 <span

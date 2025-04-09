@@ -4,7 +4,7 @@
       "id": "1",
       "customerName": "Elizabeth Lee",
       "company": "AvatarSystems",
-      "value": 364,
+      "value": 359,
       "date": "2023-07-10",
       "status": "New",
       "avatar": "/images/Avatar.png"
@@ -13,7 +13,7 @@
       "id": "2",
       "customerName": "Carlos Garcia",
       "company": "SmoozeShift",
-      "value": 751,
+      "value": 747,
       "date": "2023-07-24",
       "status": "New",
       "avatar": "/images/Avatar (1).png"
@@ -57,7 +57,7 @@
     {
       "id": "7",
       "customerName": "Nguyen Ngoc Hien",
-      "company": "Isuxu",
+      "company": "Isuzu",
       "value": 5000,
       "date": "2023-06-10",
       "status": "New",
@@ -65,29 +65,11 @@
     },
     {
       "id": "1e93",
-      "customerName": "Nguyen Ngoc ",
-      "company": "Hondaaa",
+      "customerName": "Nguyễn Ngọc Hiền",
+      "company": "Honda",
       "value": 1099,
       "date": "2025-04-03",
       "status": "Completed",
-      "avatar": "/images/Avatar.png"
-    },
-    {
-      "id": "4a2b",
-      "customerName": "Ngoc Hien",
-      "company": "IUH ",
-      "value": 10000000,
-      "date": "2025-04-23",
-      "status": "Completed",
-      "avatar": "/images/Avatar.png"
-    },
-    {
-      "id": "cd08",
-      "customerName": "a",
-      "company": "AvatarSystems",
-      "value": 89,
-      "date": "2025-04-24",
-      "status": "New",
       "avatar": "/images/Avatar.png"
     }
   ]
