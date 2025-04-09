@@ -26,6 +26,11 @@ const AddModal = ({ onClose, onSave }) => {
             alert('Vui lòng nhập đầy đủ thông tin!');
             return;
         }
+        // const dataWithAvatar = {
+        //     ...formData,
+        //     avatar: "/images/Avatar.png",
+        // };
+        // onSave(dataWithAvatar); 
         onSave(formData);
     };
 
@@ -38,7 +43,13 @@ const AddModal = ({ onClose, onSave }) => {
                         <X className="text-gray-500 hover:text-black" />
                     </button>
                 </div>
-
+                <div className="text-sm text-gray-600 mb-4 space-y-1">
+                    {formData.customerName && <p><strong>Khách hàng:</strong> {formData.customerName}</p>}
+                    {formData.company && <p><strong>Công ty:</strong> {formData.company}</p>}
+                    {formData.value && <p><strong>Giá trị đơn:</strong> {Number(formData.value).toLocaleString()} đ</p>}
+                    {formData.date && <p><strong>Ngày đặt hàng:</strong> {formData.date}</p>}
+                    {formData.status && <p><strong>Trạng thái:</strong> {formData.status}</p>}
+                </div>
                 <div className="space-y-3">
                     <input
                         name="customerName"

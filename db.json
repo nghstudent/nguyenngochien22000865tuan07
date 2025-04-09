@@ -6,15 +6,17 @@
       "company": "AvatarSystems",
       "value": 364,
       "date": "2023-07-10",
-      "status": "Completed"
+      "status": "New",
+      "avatar": "/images/Avatar.png"
     },
     {
       "id": "2",
       "customerName": "Carlos Garcia",
       "company": "SmoozeShift",
-      "value": 750,
+      "value": 751,
       "date": "2023-07-24",
-      "status": "New"
+      "status": "New",
+      "avatar": "/images/Avatar (1).png"
     },
     {
       "id": "3",
@@ -22,7 +24,8 @@
       "company": "Prime Time Telecom",
       "value": 564,
       "date": "2023-08-08",
-      "status": "In-progress"
+      "status": "In-progress",
+      "avatar": "/images/Avatar (2).png"
     },
     {
       "id": "4",
@@ -30,7 +33,8 @@
       "company": "OmniTech Corporation",
       "value": 541,
       "date": "2023-08-31",
-      "status": "In-progress"
+      "status": "In-progress",
+      "avatar": "/images/Avatar (3).png"
     },
     {
       "id": "5",
@@ -38,7 +42,8 @@
       "company": "DataStream Inc.",
       "value": 769,
       "date": "2023-05-01",
-      "status": "Completed"
+      "status": "Completed",
+      "avatar": "/images/Avatar (4).png"
     },
     {
       "id": "6",
@@ -46,7 +51,8 @@
       "company": "FlowRush",
       "value": 922,
       "date": "2023-06-10",
-      "status": "Completed"
+      "status": "Completed",
+      "avatar": "/images/Avatar (5).png"
     },
     {
       "id": "7",
@@ -54,7 +60,8 @@
       "company": "Isuxu",
       "value": 5000,
       "date": "2023-06-10",
-      "status": "Completed"
+      "status": "New",
+      "avatar": "/images/Avatar.png"
     },
     {
       "id": "26dd",
@@ -62,7 +69,26 @@
       "company": "Viettel",
       "value": 10000,
       "date": "2025-04-08",
-      "status": "New"
+      "status": "In-progress",
+      "avatar": "/images/Avatar.png"
+    },
+    {
+      "id": "775d",
+      "customerName": "Nguyen Ngoc Hien",
+      "company": "Suzukii",
+      "value": "100",
+      "date": "2025-04-02",
+      "status": "In-progress",
+      "avatar": "/images/Avatar (1).png"
+    },
+    {
+      "id": "1e93",
+      "customerName": "Nguyen Ngoc ",
+      "company": "Hondaa",
+      "value": "1099",
+      "date": "2025-04-03",
+      "status": "Completed",
+      "avatar": "/images/Avatar.png"
     }
   ]
 }

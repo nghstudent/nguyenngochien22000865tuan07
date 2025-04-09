@@ -5,13 +5,7 @@ import AddModal from "./AddModal";
 
 const pageSize = 6;
 
-const getInitials = (name) =>
-  name
-    .split(" ")
-    .map((word) => word[0])
-    .join("")
-    .toUpperCase();
-
+// Hàm đổi màu trạng thái dựa vào giá trị status
 const getStatusColor = (status) => {
   switch (status) {
     case "Completed":
@@ -33,17 +27,19 @@ const DataTable = () => {
   const [editingCustomer, setEditingCustomer] = useState(null);
   const [isAddOpen, setIsAddOpen] = useState(false);
 
+  // Gọi API lấy danh sách khách hàng khi component được mount
   useEffect(() => {
     fetch("http://localhost:3000/customers")
-    // fetch("data/dataKhachHang.json")
       .then((res) => res.json())
       .then((data) => setOrders(data))
       .catch((error) => console.error("Lỗi khi load dữ liệu:", error));
   }, []);
 
+  // Tính tổng số trang và lấy dữ liệu trang hiện tại
   const totalPages = Math.ceil(orders.length / pageSize);
   const paginatedOrders = orders.slice((page - 1) * pageSize, page * pageSize);
 
+  // Chọn hoặc bỏ chọn tất cả checkbox trên trang hiện tại
   const handleSelectAll = (e) => {
     const pageIds = paginatedOrders.map((o) => o.id);
     if (e.target.checked) {
@@ -53,22 +49,26 @@ const DataTable = () => {
     }
   };
 
+  // Chọn hoặc bỏ chọn một dòng
   const handleSelectOne = (id) => {
     setSelectedIds((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
     );
   };
 
+  // Mở modal sửa và set khách hàng cần chỉnh sửa
   const openEditModal = (customer) => {
     setEditingCustomer(customer);
     setIsEditOpen(true);
   };
 
+  // Đóng modal sửa
   const closeEditModal = () => {
     setEditingCustomer(null);
     setIsEditOpen(false);
   };
 
+  // Xử lý khi lưu chỉnh sửa
   const handleSaveEdit = async (updatedCustomer) => {
     try {
       const res = await fetch(`http://localhost:3000/customers/${updatedCustomer.id}`, {
@@ -82,6 +82,7 @@ const DataTable = () => {
       }
 
       const updated = await res.json();
+      // Cập nhật danh sách khách hàng
       setOrders((prevOrders) =>
         prevOrders.map((order) =>
           order.id === updated.id ? updated : order
@@ -94,11 +95,16 @@ const DataTable = () => {
     }
   };
 
+  // Mở và đóng modal thêm khách hàng
   const openAddModal = () => setIsAddOpen(true);
   const closeAddModal = () => setIsAddOpen(false);
 
+  // Xử lý khi lưu khách hàng mới
   const handleSaveAdd = async (newCustomer) => {
     try {
+      if (!newCustomer.avatar) {
+        newCustomer.avatar = "/images/Avatar.png";
+      }
       const res = await fetch("http://localhost:3000/customers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -108,7 +114,7 @@ const DataTable = () => {
       if (!res.ok) throw new Error("Thêm thất bại");
 
       const added = await res.json();
-      setOrders((prev) => [...prev, added]);
+      setOrders((prev) => [...prev, added]); //Thêm vào danh sách
       closeAddModal();
     } catch (error) {
       console.error("Lỗi khi thêm khách hàng:", error);
@@ -116,11 +122,13 @@ const DataTable = () => {
     }
   };
 
+  // Format giá trị đơn hàng sang định dạng USD
   const formatCurrency = (usd) =>
     usd.toLocaleString("en-US", { style: "currency", currency: "USD" });
 
   return (
     <div className="px-4 py-8">
+      {/* Tiêu đề và các nút Import/Export */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <FileText className="text-red-700" size={24} />
@@ -141,6 +149,7 @@ const DataTable = () => {
         </div>
       </div>
 
+      {/* Bảng dữ liệu khách hàng */}
       <table className="min-w-full bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
         <thead className="bg-gray-100 text-left text-sm font-medium text-gray-600">
           <tr>
@@ -159,29 +168,36 @@ const DataTable = () => {
             <th className="p-3">Order Value</th>
             <th className="p-3">Order Date</th>
             <th className="p-3">Status</th>
-            <th className="p-3 text-center">Action</th>
+            <th className="p-3 text-center"></th>
           </tr>
         </thead>
         <tbody>
+          {/* Hiển thị từng dòng dữ liệu */}
           {paginatedOrders.map((order) => (
             <tr key={order.id} className="border-t hover:bg-gray-50 transition">
               <td className="p-3">
+                {/* Checkbox từng dòng */}
                 <input
                   type="checkbox"
                   checked={selectedIds.includes(order.id)}
                   onChange={() => handleSelectOne(order.id)}
                 />
               </td>
+              {/* Avatar và họ tên */}
               <td className="p-3 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm font-bold">
-                  {getInitials(order.customerName)}
-                </div>
+                <img
+                  src={order.avatar || "/images/Avatar.png"}
+                  alt={order.customerName}
+                  className="w-8 h-8 rounded-full object-cover"
+                />
                 <span>{order.customerName}</span>
               </td>
+
               <td className="p-3 text-sm">{order.company}</td>
               <td className="p-3 text-sm">{formatCurrency(order.value)}</td>
               <td className="p-3 text-sm">{order.date}</td>
               <td className="p-3">
+                {/* Hiển thị trạng thái với màu sắc tương ứng */}
                 <span
                   className={`px-2 py-1 rounded-full text-xs text-white ${getStatusColor(order.status)}`}
                 >
@@ -189,6 +205,7 @@ const DataTable = () => {
                 </span>
               </td>
               <td className="p-3 text-center">
+                {/* Button mở modal chỉnh sửa */}
                 <button
                   className="text-gray-500 hover:text-blue-500"
                   onClick={() => openEditModal(order)}
@@ -219,7 +236,7 @@ const DataTable = () => {
           ))}
         </div>
       </div>
-
+      {/* Hiển thị modal chỉnh sửa nếu đang mở */}
       {isEditOpen && (
         <EditModal
           customer={editingCustomer}
@@ -227,7 +244,7 @@ const DataTable = () => {
           onSave={handleSaveEdit}
         />
       )}
-
+      {/* Hiển thị modal thêm mới nếu đang mở */}
       {isAddOpen && (
         <AddModal
           onClose={closeAddModal}

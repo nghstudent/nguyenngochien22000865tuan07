@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const EditModal = ({ customer, onClose, onSave }) => {
+    // State lưu trữ thông tin khách hàng đang được chỉnh sửa
     const [formData, setFormData] = useState({
         customerName: "",
         company: "",
@@ -9,17 +10,20 @@ const EditModal = ({ customer, onClose, onSave }) => {
         status: "",
     });
 
+    // useEffect - Khi prop customer thay đổi, cập nhật state formData tương ứng
     useEffect(() => {
         if (customer) {
             setFormData(customer);
         }
     }, [customer]);
 
+    // Hàm xử lý thay đổi input/select - Cập nhật giá trị vào formData dựa theo tên trường
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
+    // Hàm xử lý khi người dùng bấm "Cập nhật" - Chuyển giá trị đơn hàng về kiểu số và gửi dữ liệu cập nhật
     const handleSave = () => {
         const updatedData = {
             ...formData,
@@ -29,6 +33,7 @@ const EditModal = ({ customer, onClose, onSave }) => {
         onClose();
     };
 
+    // Nếu không có khách hàng nào được chọn, không hiển thị modal
     if (!customer) return null;
 
     return (
@@ -95,7 +100,7 @@ const EditModal = ({ customer, onClose, onSave }) => {
                         </select>
                     </div>
                 </div>
-
+                {/* Action */}
                 <div className="flex justify-end gap-2 mt-6">
                     <button
                         onClick={onClose}
