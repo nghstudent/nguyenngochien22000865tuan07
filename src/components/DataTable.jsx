@@ -240,19 +240,38 @@ const DataTable = () => {
       <div className="flex justify-between items-center mt-4 text-sm">
         <span>{orders.length} results</span>
         <div className="flex gap-2">
-          {[...Array(totalPages)].map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setPage(i + 1)}
-              className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition 
-                ${page === i + 1
-                  ? "bg-rose-500 text-white font-bold"
-                  : "bg-rose-200 text-white hover:bg-rose-400"
-                }`}
-            >
-              {i + 1}
-            </button>
-          ))}
+          {/* Chỉ mục trang */}
+          {Array.from({ length: totalPages }, (_, i) => i + 1)
+            .filter((pageNum) =>
+              pageNum === 1 ||
+              pageNum === totalPages ||
+              Math.abs(pageNum - page) <= 1
+            )
+            .reduce((acc, curr, idx, arr) => {
+              if (idx > 0 && curr - arr[idx - 1] > 1) {
+                acc.push("ellipsis");
+              }
+              acc.push(curr);
+              return acc;
+            }, [])
+            .map((item, i) =>
+              item === "ellipsis" ? (
+                <span key={i} className="w-8 h-8 flex items-center justify-center">...</span>
+              ) : (
+                <button
+                  key={i}
+                  onClick={() => setPage(item)}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition 
+          ${page === item
+                      ? "bg-rose-500 text-white font-bold"
+                      : "bg-rose-200 text-white hover:bg-rose-400"
+                    }`}
+                >
+                  {item}
+                </button>
+              )
+            )}
+
         </div>
       </div>
       {/* Hiển thị modal chỉnh sửa nếu đang mở */}
