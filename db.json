@@ -2,84 +2,84 @@
   "customers": [
     {
       "id": "1",
-      "customerName": "Mia Lee",
-      "company": "AlphaNet",
-      "value": 599,
-      "date": "2025-05-22",
+      "customerName": "Elizabeth Lee",
+      "company": "AvatarSystems",
+      "value": 364,
+      "date": "2023-07-10",
       "status": "New",
-      "avatar": "/images/Avatar (2).png"
+      "avatar": "/images/Avatar.png"
     },
     {
       "id": "2",
-      "customerName": "Benjamin Taylor",
-      "company": "OmniCore",
-      "value": 1719,
-      "date": "2024-04-13",
+      "customerName": "Carlos Garcia",
+      "company": "SmoozeShift",
+      "value": 751,
+      "date": "2023-07-24",
+      "status": "New",
+      "avatar": "/images/Avatar (1).png"
+    },
+    {
+      "id": "3",
+      "customerName": "Elizabeth Bailey",
+      "company": "Prime Time Telecom",
+      "value": 564,
+      "date": "2023-08-08",
+      "status": "In-progress",
+      "avatar": "/images/Avatar (2).png"
+    },
+    {
+      "id": "4",
+      "customerName": "Ryan Brown",
+      "company": "OmniTech Corporation",
+      "value": 541,
+      "date": "2023-08-31",
       "status": "In-progress",
       "avatar": "/images/Avatar (3).png"
     },
     {
-      "id": "3",
-      "customerName": "Amelia Taylor",
-      "company": "NextSolutions",
-      "value": 707,
-      "date": "2025-06-18",
-      "status": "In-progress",
-      "avatar": "/images/Avatar (5).png"
-    },
-    {
-      "id": "4",
-      "customerName": "Ava Hernandez",
-      "company": "VisionX",
-      "value": 2203,
-      "date": "2023-02-28",
-      "status": "In-progress",
-      "avatar": "/images/Avatar (4).png"
-    },
-    {
       "id": "5",
-      "customerName": "James Thompson",
-      "company": "NextSolutions",
-      "value": 1217,
-      "date": "2025-01-07",
+      "customerName": "Ryan Young",
+      "company": "DataStream Inc.",
+      "value": 769,
+      "date": "2023-05-01",
       "status": "Completed",
       "avatar": "/images/Avatar (4).png"
     },
     {
       "id": "6",
-      "customerName": "Olivia Smith",
-      "company": "AlphaNet",
-      "value": 251,
-      "date": "2024-04-20",
+      "customerName": "Hailey Adams",
+      "company": "FlowRush",
+      "value": 922,
+      "date": "2023-06-10",
       "status": "Completed",
-      "avatar": "/images/Avatar (1).png"
+      "avatar": "/images/Avatar (5).png"
     },
     {
       "id": "7",
-      "customerName": "William Johnson",
-      "company": "TechNova",
-      "value": 456,
-      "date": "2025-07-01",
-      "status": "Completed",
+      "customerName": "Nguyen Ngoc Hien",
+      "company": "Isuxu",
+      "value": 5000,
+      "date": "2023-06-10",
+      "status": "New",
       "avatar": "/images/Avatar.png"
     },
     {
       "id": "8",
-      "customerName": "Lucas Smith",
-      "company": "CodeCrafters",
-      "value": 826,
-      "date": "2024-06-03",
-      "status": "In-progress",
-      "avatar": "/images/Avatar (1).png"
+      "customerName": "Nguyen Ngoc ",
+      "company": "Honda",
+      "value": 1099,
+      "date": "2025-04-03",
+      "status": "Completed",
+      "avatar": "/images/Avatar.png"
     },
     {
       "id": "9",
-      "customerName": "James Brown",
-      "company": "CoreSystems",
-      "value": 4299,
-      "date": "2023-01-14",
-      "status": "In-progress",
-      "avatar": "/images/Avatar (1).png"
+      "customerName": "Ngoc Hien",
+      "company": "IUH",
+      "value": 10000000,
+      "date": "2025-04-23",
+      "status": "Completed",
+      "avatar": "/images/Avatar.png"
     },
     {
       "id": "10",
@@ -546,7 +546,7 @@
       "company": "NeoTech",
       "value": 170,
       "date": "2024-06-23",
-      "status": "New",
+      "status": "Completed",
       "avatar": "/images/Avatar.png"
     },
     {
@@ -560,12 +560,12 @@
     },
     {
       "id": "63",
-      "customerName": "Evelyn Lee",
-      "company": "NextSolutions",
-      "value": 4637,
-      "date": "2025-11-03",
+      "customerName": "Charlotte Cristiano",
+      "company": "CoreSystems",
+      "value": 2000,
+      "date": "2024-10-25",
       "status": "Completed",
-      "avatar": "/images/Avatar (5).png"
+      "avatar": "/images/Avatar (4).png"
     }
   ]
 }
