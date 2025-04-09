@@ -64,30 +64,30 @@
       "avatar": "/images/Avatar.png"
     },
     {
-      "id": "26dd",
-      "customerName": "Nguyễn Phúc H",
-      "company": "Viettel",
-      "value": 10000,
-      "date": "2025-04-08",
-      "status": "In-progress",
+      "id": "1e93",
+      "customerName": "Nguyen Ngoc ",
+      "company": "Hondaaa",
+      "value": 1099,
+      "date": "2025-04-03",
+      "status": "Completed",
       "avatar": "/images/Avatar.png"
     },
     {
-      "id": "775d",
-      "customerName": "Nguyen Ngoc Hien",
-      "company": "Suzukii",
-      "value": "100",
-      "date": "2025-04-02",
-      "status": "In-progress",
-      "avatar": "/images/Avatar (1).png"
+      "id": "4a2b",
+      "customerName": "Ngoc Hien",
+      "company": "IUH ",
+      "value": 10000000,
+      "date": "2025-04-23",
+      "status": "Completed",
+      "avatar": "/images/Avatar.png"
     },
     {
-      "id": "1e93",
-      "customerName": "Nguyen Ngoc ",
-      "company": "Hondaa",
-      "value": "1099",
-      "date": "2025-04-03",
-      "status": "Completed",
+      "id": "cd08",
+      "customerName": "a",
+      "company": "AvatarSystems",
+      "value": 89,
+      "date": "2025-04-24",
+      "status": "New",
       "avatar": "/images/Avatar.png"
     }
   ]

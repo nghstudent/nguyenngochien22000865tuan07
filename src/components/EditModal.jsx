@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const EditModal = ({ customer, onClose, onSave }) => {
+const EditModal = ({ customer, onClose, onSave, onDelete }) => {
     // State lưu trữ thông tin khách hàng đang được chỉnh sửa
     const [formData, setFormData] = useState({
         customerName: "",
@@ -31,6 +31,14 @@ const EditModal = ({ customer, onClose, onSave }) => {
         };
         onSave(updatedData);
         onClose();
+    };
+
+    const handleDelete = () => {
+        const confirmDelete = window.confirm("Bạn có chắc chắn muốn xóa khách hàng này?");
+        if (confirmDelete && customer) {
+            onDelete(customer.id);
+            onClose();
+        }
     };
 
     // Nếu không có khách hàng nào được chọn, không hiển thị modal
@@ -107,6 +115,12 @@ const EditModal = ({ customer, onClose, onSave }) => {
                         className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
                     >
                         Hủy
+                    </button>
+                    <button
+                        onClick={handleDelete}
+                        className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                    >
+                        Xóa
                     </button>
                     <button
                         onClick={handleSave}

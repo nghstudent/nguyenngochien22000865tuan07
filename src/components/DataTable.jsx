@@ -95,6 +95,13 @@ const DataTable = () => {
     }
   };
 
+  const handleDeleteCustomer = (id) => {
+    // setCustomers(prev => prev.filter(c => c.id !== id));
+
+    fetch(`http://localhost:3000/customers/${id}`, {
+      method: 'DELETE'
+    });
+  };
   // Mở và đóng modal thêm khách hàng
   const openAddModal = () => setIsAddOpen(true);
   const closeAddModal = () => setIsAddOpen(false);
@@ -124,7 +131,7 @@ const DataTable = () => {
 
   // Format giá trị đơn hàng sang định dạng USD
   const formatCurrency = (usd) =>
-    usd.toLocaleString("en-US", { style: "currency", currency: "USD" });
+    Number(usd).toLocaleString("en-US", { style: "currency", currency: "USD" });
 
   return (
     <div className="px-4 py-8">
@@ -242,6 +249,7 @@ const DataTable = () => {
           customer={editingCustomer}
           onClose={closeEditModal}
           onSave={handleSaveEdit}
+          onDelete={handleDeleteCustomer}
         />
       )}
       {/* Hiển thị modal thêm mới nếu đang mở */}

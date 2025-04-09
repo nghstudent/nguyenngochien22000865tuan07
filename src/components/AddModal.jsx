@@ -46,7 +46,7 @@ const AddModal = ({ onClose, onSave }) => {
                 <div className="text-sm text-gray-600 mb-4 space-y-1">
                     {formData.customerName && <p><strong>Khách hàng:</strong> {formData.customerName}</p>}
                     {formData.company && <p><strong>Công ty:</strong> {formData.company}</p>}
-                    {formData.value && <p><strong>Giá trị đơn:</strong> {Number(formData.value).toLocaleString()} đ</p>}
+                    {formData.value && <p><strong>Giá trị đơn: $</strong> {Number(formData.value).toLocaleString()}</p>}
                     {formData.date && <p><strong>Ngày đặt hàng:</strong> {formData.date}</p>}
                     {formData.status && <p><strong>Trạng thái:</strong> {formData.status}</p>}
                 </div>
