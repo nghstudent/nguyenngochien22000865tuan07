@@ -530,6 +530,15 @@
       "date": "2024-01-30",
       "status": "Completed",
       "avatar": "/images/Avatar (2).png"
+    },
+    {
+      "id": "5510",
+      "customerName": "Nguyen Ngoc Hien",
+      "company": "Thép Hòa Phát",
+      "value": "7777777",
+      "date": "2025-04-16",
+      "status": "New",
+      "avatar": "/images/Avatar.png"
     }
   ]
 }
